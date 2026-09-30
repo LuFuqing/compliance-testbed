@@ -1,0 +1,9 @@
+target,param,S1,ST,interaction
+M6_conformance_score,p_err,0.2492,0.3561,0.1069
+M6_conformance_score,p_skip,0.2588,0.2833,0.0245
+M6_conformance_score,p_atk,0.4004,0.4388,0.0384
+M6_conformance_score,n_stakeholders,0.0019,0.0,-0.0019
+M1_evidence_completeness,p_err,0.094,0.1964,0.1024
+M1_evidence_completeness,p_skip,0.5296,0.5868,0.0571
+M1_evidence_completeness,p_atk,0.2749,0.3,0.0252
+M1_evidence_completeness,n_stakeholders,0.0015,0.0,-0.0015

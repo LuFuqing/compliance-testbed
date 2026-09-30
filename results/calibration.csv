@@ -1,0 +1,7 @@
+phase,stage,t0,t1,hours,load,p_err,p_skip,p_atk,n_handovers,M1_evidence_completeness,M2_audit_prep_time,M3_violation_detection,M3s_mislabel_detection,M4_handover_latency,M5_tamper_resilience,M6_conformance_score
+P0_pre_event,monitoring baseline,0,6,6,1.0,0.01,0.005,0.002,120,0.9833,0.0917,0.8889,0.6667,1.2465,,0.9939
+P1_data_baseplate,data baseplate (数据底板),6,12,6,1.6,0.02,0.01,0.005,192,0.974,0.1568,0.8519,0.4286,1.2568,1.0,0.9819
+P2_model_inference,model inference (模型),12,18,6,2.2,0.03,0.015,0.01,264,0.9773,0.1239,0.8182,0.5,1.2483,1.0,0.9908
+P3_warning,early warning (预警),18,21,3,3.0,0.06,0.04,0.02,360,0.9306,0.2472,0.9429,0.75,1.2564,1.0,0.9744
+P4_dispatch,dispatch (调度),21,27,6,3.2,0.08,0.06,0.03,384,0.8906,0.3404,0.9015,0.6905,1.2449,1.0,0.9627
+P5_recession,recession / post-event review (复盘),27,36,9,1.2,0.02,0.01,0.005,144,0.9583,0.1715,0.8889,0.5,1.2373,1.0,0.9846

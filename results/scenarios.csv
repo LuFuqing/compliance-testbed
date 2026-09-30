@@ -1,0 +1,11 @@
+scenario,mode,profile,p_err,p_skip,p_atk,topology,n_stakeholders,n_handovers,M1_evidence_completeness,M2_audit_prep_time,M3_violation_detection,M3s_mislabel_detection,M4_handover_latency,M5_tamper_resilience,M6_conformance_score
+B0_none,B0,flood,0.02,0.01,0.01,star,5,1200,0.0,5.8233,1.0,,1.2494,0.0,0.193
+B1_partial,B1,flood,0.02,0.01,0.01,star,5,1200,0.0,4.24,1.0,,1.2494,0.0,0.5439
+S0_full_baseline,B2,flood,0.02,0.01,0.01,star,5,1200,0.9808,0.1183,0.8925,0.5833,1.2492,1.0,0.9905
+S1_mislabel_high,B2,flood,0.15,0.01,0.01,star,5,1200,0.9825,0.1621,0.7941,0.5792,1.2516,1.0,0.9779
+S2_unsigned_high,B2,flood,0.02,0.1,0.01,star,5,1200,0.8958,0.2467,0.949,0.5833,1.2492,0.9286,0.9771
+S3_mesh_topology,B2,flood,0.02,0.01,0.01,mesh,5,1200,0.9808,0.1183,0.8925,0.5833,0.8495,1.0,0.9905
+S4_adversarial,B2,flood,0.02,0.01,0.08,star,5,1200,0.91,0.3308,0.9438,0.5833,1.2492,1.0,0.9718
+S5_scale_N12,B2,flood,0.02,0.01,0.01,star,12,1200,0.9808,0.1183,0.8925,0.5833,1.5115,1.0,0.9905
+S6_transport_baseline,B2,transport,0.02,0.01,0.01,star,5,1200,0.985,0.1083,0.8571,0.4643,1.2523,1.0,0.9908
+S6b_transport_adv,B2,transport,0.02,0.01,0.08,star,5,1200,0.9267,0.2854,0.9148,0.4643,1.2523,0.9872,0.9754

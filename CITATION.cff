@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this testbed, its rule set, or its reported results, please cite it using the metadata below."
+title: "Compliance-by-Design Simulation Testbed for City Digital Twins Under China's Data-Security Standards"
+abstract: >-
+  A domain-agnostic simulation testbed that formalises Chinese data-security
+  standards (GB/T 43697-2024, GB/T 39786-2021, GB/T 22239-2019, GB/T 45109.1-2024,
+  20262810-T-907 draft, PIPL, SL/T 853-855-2025) as machine-checkable constraints
+  R1-R8, and measures the effect of compliance-by-design on cross-organisational
+  evidence handover in city digital twins. Ships an engine/ruleset/profiles
+  separation with a flood-twin validation case and an urban-transport
+  generalisation probe. Version 1.0.4 reproduces the scenario suite, the
+  SL/T 853-855 phase stress contrast, and the Morris/Sobol sensitivity analysis,
+  and ships the supplementary tables named in the accompanying manuscript's
+  data-availability statement.
+type: software
+authors:
+  - family-names: Lu
+    given-names: Fuqing
+    affiliation: "Beijing Institute of Technology"
+    email: "3420265139@bit.edu.cn"
+version: "1.0.4"
+date-released: 2026-09-23
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - city digital twin
+  - compliance by design
+  - data security standards
+  - evidence handover
+  - flood twin
+  - uncertainty quantification
+  - reproducibility
+repository-code: "https://github.com/LuFuqing/compliance-testbed"
+url: "https://github.com/LuFuqing/compliance-testbed"

@@ -1,0 +1,41 @@
+NOTICE — licensing of this artifact
+===================================
+
+This artifact is dual-licensed by content type. The split is deliberate: the
+code is meant to be reused and extended (up to and including commercial use),
+whereas the generated data, figures and documentation are meant to be cited
+and redistributed with attribution.
+
+1. CODE — MIT License (see LICENSE)
+   Applies to:
+     engine/                    ruleset/            profiles/
+     experiments/               run_all.py          run_stress_sensitivity.py
+     reproduce.sh               verify_results.py   Makefile
+     make_release.py            make_manifest.py
+   Copyright (c) 2026 Lu Fuqing and contributors.
+
+2. DATA, FIGURES, DOCUMENTATION — CC BY 4.0 (see LICENSE-DATA)
+   Applies to:
+     results/          (all *.csv, *.json — regenerable)
+     results/figures/  (all *.png — regenerable)
+     results/SHA256SUMS (regenerable manifest)
+     RESULTS.md        (authored interpretation, at the repository root)
+     docs/             (research design record)      README.md
+     CHANGELOG.md      RELEASE.md
+   You may share and adapt this material for any purpose, including
+   commercially, provided you give appropriate credit, link to the license,
+   and indicate if changes were made.
+
+3. THIRD-PARTY MATERIAL
+   No third-party code is vendored. The runtime dependency for figure
+   generation is matplotlib (PSF-based / BSD-compatible), which is not
+   redistributed here and must be installed by the user.
+
+Suggested attribution string
+----------------------------
+Lu Fuqing et al. (2026). Compliance-by-Design Simulation Testbed for City
+Digital Twins Under China's Data-Security Standards (version 1.0.4)
+[Computer software]. https://github.com/LuFuqing/compliance-testbed  DOI: <DOI>
+
+The DOI is filled in at deposit time; RELEASE.md §1b lists every placeholder in
+the tree and the one command that finds them again.

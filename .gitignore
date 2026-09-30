@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Generated / release
+dist/
+*.zip
+*.tar.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Fetched licence text (only if `make licenses` was re-run)
+LICENSE-DATA.tmp

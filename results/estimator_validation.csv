@@ -1,0 +1,21 @@
+panel,test_function,output_sd,bins,N,factor_index,factor_name,true_S1,saltelli_S1_N1024,jansen_ST_N1024,substituted_S1_N4000,ensemble_mean,ensemble_sd,n_seeds,note
+A,additive  f = x0 + 2x1,0.64693,10,4000,0,x0,0.2,,,0.198696,0.199989,0.011199,200,"ordinary output scale; substituted estimator only, as in Table 7 (B = 10)"
+A,additive  f = x0 + 2x1,0.64693,10,4000,1,x1,0.8,,,0.791502,0.792506,0.004519,200,"ordinary output scale; substituted estimator only, as in Table 7 (B = 10)"
+A,additive  f = x0 + 2x1,0.64693,10,4000,2,x2,0.0,,,0.002814,0.002215,0.000899,200,"ordinary output scale; substituted estimator only, as in Table 7 (B = 10)"
+A,additive  f = x0 + 2x1,0.64693,10,4000,3,x3,0.0,,,0.00117,0.00238,0.001162,200,"ordinary output scale; substituted estimator only, as in Table 7 (B = 10)"
+A,single  f = x0,0.28902,10,4000,0,x0,1.0,,,0.990238,0.990014,0.000205,200,"ordinary output scale; substituted estimator only, as in Table 7 (B = 10)"
+A,single  f = x0,0.28902,10,4000,1,x1,0.0,,,0.001561,0.00221,0.001039,200,"ordinary output scale; substituted estimator only, as in Table 7 (B = 10)"
+A,single  f = x0,0.28902,10,4000,2,x2,0.0,,,0.002047,0.002326,0.001081,200,"ordinary output scale; substituted estimator only, as in Table 7 (B = 10)"
+A,single  f = x0,0.28902,10,4000,3,x3,0.0,,,0.003911,0.002227,0.001095,200,"ordinary output scale; substituted estimator only, as in Table 7 (B = 10)"
+B,additive  f = 0.5 + a(x0 + x1),0.01205,10,4000,0,x0,0.5,1.154836,0.516465,0.496392,0.496138,0.009885,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,additive  f = 0.5 + a(x0 + x1),0.01205,10,4000,1,x1,0.5,0.971806,0.484779,0.493201,0.496336,0.009818,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,additive  f = 0.5 + a(x0 + x1),0.01205,10,4000,2,x2,0.0,0.0,0.0,0.002458,0.002256,0.000931,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,additive  f = 0.5 + a(x0 + x1),0.01205,10,4000,3,x3,0.0,0.0,0.0,0.001959,0.002315,0.001141,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,interaction f = 0.5 + b*x0*x1,0.012,10,4000,0,x0,0.0,-0.038681,0.553789,0.427378,0.425896,0.012577,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,interaction f = 0.5 + b*x0*x1,0.012,10,4000,1,x1,0.0,0.916851,0.576636,0.421601,0.425884,0.012902,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,interaction f = 0.5 + b*x0*x1,0.012,10,4000,2,x2,0.0,0.0,0.0,0.001156,0.002229,0.000978,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,interaction f = 0.5 + b*x0*x1,0.012,10,4000,3,x3,0.0,0.0,0.0,0.002148,0.002341,0.001105,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,single  f = 0.5 + c*x0,0.01201,10,4000,0,x0,1.0,1.927338,0.981829,0.990238,0.990014,0.000205,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,single  f = 0.5 + c*x0,0.01201,10,4000,1,x1,0.0,0.0,0.0,0.001561,0.00221,0.001039,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,single  f = 0.5 + c*x0,0.01201,10,4000,2,x2,0.0,0.0,0.0,0.002047,0.002326,0.001081,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024
+B,single  f = 0.5 + c*x0,0.01201,10,4000,3,x3,0.0,0.0,0.0,0.003911,0.002227,0.001095,200,low-variance regime: function scaled so output sd ~ 0.012; Saltelli and Jansen at N = 1024

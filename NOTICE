@@ -35,7 +35,8 @@ Suggested attribution string
 ----------------------------
 Lu Fuqing et al. (2026). Compliance-by-Design Simulation Testbed for City
 Digital Twins Under China's Data-Security Standards (version 1.0.4)
-[Computer software]. https://github.com/LuFuqing/compliance-testbed  DOI: <DOI>
+[Computer software]. https://github.com/LuFuqing/compliance-testbed  DOI: 10.5281/zenodo.23069546
 
-The DOI is filled in at deposit time; RELEASE.md §1b lists every placeholder in
-the tree and the one command that finds them again.
+The DOI is registered by Zenodo. It is the version DOI for release 1.0.4 and,
+being the first deposit, also the concept DOI, so it keeps resolving once further
+versions are deposited. RELEASE.md §4 covers the deposit procedure.

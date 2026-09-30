@@ -281,7 +281,7 @@ metadata is in [`CITATION.cff`](CITATION.cff).
   year    = {2026},
   date    = {2026-09-23},
   license = {MIT AND CC-BY-4.0},
-  doi     = {<DOI>}
+  doi     = {10.5281/zenodo.23069546}
 }
 ```
 

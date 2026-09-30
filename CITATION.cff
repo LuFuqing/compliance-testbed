@@ -23,6 +23,10 @@ date-released: 2026-09-23
 license:
   - MIT
   - CC-BY-4.0
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23069546
+    description: "Zenodo DOI for release 1.0.4. As this is the first deposit, the same DOI also serves as the concept DOI and will keep resolving once further versions are deposited."
 keywords:
   - city digital twin
   - compliance by design

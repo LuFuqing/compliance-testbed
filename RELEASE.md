@@ -39,35 +39,38 @@ for f in CITATION.cff NOTICE README.md Makefile; do
 done
 ```
 
-As of v1.0.4 there were five, in three groups. The three that name the hosting account are now
-resolved; the two that need the DOI are not. The grep above keeps the `CHANGEME` and
-`<REPOSITORY-URL>` patterns even though nothing matches them any more, so that a later edit cannot
-reintroduce one unnoticed.
+As of v1.0.4 there were five, and all five are now resolved — three named the hosting account, two
+needed the Zenodo DOI. The grep above keeps `CHANGEME`, `<DOI` and `<REPOSITORY-URL>` even though
+nothing in the release matches them any more, so that a later edit cannot reintroduce one unnoticed.
 
 | File | Placeholder | State |
 |---|---|---|
 | `CITATION.cff` | `repository-code`, `url` | done — `https://github.com/LuFuqing/compliance-testbed` |
 | `NOTICE` | attribution URL | done — the same URL |
-| `NOTICE` | `<DOI>` ×1 | **open** — the Zenodo DOI once deposited (§4) |
-| `README.md` | `<DOI>` ×1 (the BibTeX block) | **open** — the same DOI |
+| `NOTICE` | `<DOI>` ×1 | done — `10.5281/zenodo.23069546` |
+| `README.md` | `<DOI>` ×1 (the BibTeX block) | done — the same DOI |
+| `CITATION.cff` | `identifiers:` block | added — the same DOI, with its version/concept roles described |
 
 - [x] **Replace the repository placeholder.** It was `https://github.com/CHANGEME/compliance-testbed`
       in the two `CITATION.cff` fields, plus `<REPOSITORY-URL>` in the `NOTICE` attribution string;
       all three now carry `https://github.com/LuFuqing/compliance-testbed`. Both retired tokens
       still appear in *this* file, inside the illustrative commands and the table above. Those are
       documentation, not metadata, and the scan skips this file.
-- [ ] **Fill the DOI placeholders** in `NOTICE` and `README.md` after depositing (§4), and add an
-      `identifiers:` block to `CITATION.cff` at the same time. A bare `<DOI>` inside an
-      attribution string is the one placeholder that ends up in somebody's citation.
+- [x] **Fill the DOI placeholders** in `NOTICE` and `README.md`, and add an `identifiers:` block to
+      `CITATION.cff`. All three carry `10.5281/zenodo.23069546`. The DOI was **reserved on Zenodo
+      before the archives were rebuilt**, so the shipped metadata contains its own DOI — a DOI minted
+      at publish time can never appear inside the release it identifies. Kept as a checklist item
+      because every later version repeats it with that version's own DOI.
 
 ### 1c. Decisions only the authors can make
 
 - [ ] **Check the author list and affiliation** in `CITATION.cff`, and the copyright holder in
       `LICENSE` and `NOTICE` (`Lu Fuqing and contributors`). Add co-authors before depositing, not
       after — the DOI record is what people will cite.
-- [ ] **Decide the licence.** The shipped split is MIT for code and CC BY 4.0 for data/figures.
-      This is the recommended default for journal artifacts, but it is a decision for the authors.
-      If you change it, edit `LICENSE`, `LICENSE-DATA`, `NOTICE`, `CITATION.cff` (the `license`
+- [x] **Decide the licence.** Confirmed by the author on 2026-10-01: **MIT** for code, **CC BY 4.0**
+      for data, figures and documentation. Note that the verifier only asserts the two licence files
+      *exist* — it never checks *which* licence they contain — so this choice is not enforced by any
+      gate. If you change it, edit `LICENSE`, `LICENSE-DATA`, `NOTICE`, `CITATION.cff` (the `license`
       list) and the licence table in `README.md` together so they cannot disagree.
 - [ ] **Read `RESULTS.md` §6 and confirm the caveats still apply** to the numbers you are about
       to publish. They are the honest boundary of what the artifact supports.
@@ -190,28 +193,46 @@ will move.
 ## 4. Deposit for a citable DOI
 
 GitHub alone gives a URL, not a DOI. Most journals — including Elsevier titles such as Advanced
-Engineering Informatics — expect a DOI for a software artifact, so deposit through Zenodo, which
-integrates directly with GitHub releases:
+Engineering Informatics — expect a DOI for a software artifact. There are two routes into Zenodo, and
+v1.0.4 used the **manual deposit with a reserved DOI**, because it is the only route that lets the
+deposit contain its own DOI:
 
-1. Sign in to [zenodo.org](https://zenodo.org) with GitHub and authorise the repository under
-   *Settings → GitHub*.
-2. Return to GitHub, edit the release you just created, and press **Publish** if the Zenodo
-   webhook has not already minted a DOI. Zenodo reserves a DOI for every release.
-3. Copy the **concept DOI** (the one that always resolves to the latest version) for the paper's
-   Data/Code Availability statement, and the **version DOI** for the exact v1.0.4 record.
-4. Update every place that references the DOI:
-   - `CITATION.cff` — add an `identifiers:` block:
+| Route | What gets archived | Can the deposit contain its own DOI? |
+|---|---|---|
+| **Manual upload, DOI reserved first** (used for v1.0.4) | the two archives built in §2, plus `dist/SHA256SUMS` | **yes** — Zenodo displays the DOI *before* publication, so it can be written into the files first |
+| GitHub ↔ Zenodo integration | GitHub's auto-generated source archive at the tag | **no** — the DOI is minted when the release publishes, and `dist/` is git-ignored, so the built archives are never archived at all |
+
+A DOI becomes immutable once registered, and uploaded files can only be changed within 45 days of
+publication (metadata stays editable forever). Hence: get the repository right first, publish last.
+
+### What was done for v1.0.4
+
+1. On Zenodo: *New upload* → answer **No** to "Do you already have a DOI for this upload?" → click
+   **Get a DOI now!** The DOI `10.5281/zenodo.23069546` is reserved. **Save the draft** — deleting it
+   discards the reserved DOI permanently. A reserved DOI does not resolve until the record is
+   published (it answers 404 in the meantime); that is expected, not an error.
+2. Write that DOI into the release metadata **before building the archives**:
+   - `NOTICE` — the suggested attribution string
+   - `README.md` — the BibTeX block
+   - `CITATION.cff` — an `identifiers:` block. The `doi:` field is only a shorthand for it, and a
+     shorthand cannot distinguish a version DOI from a concept DOI:
      ```yaml
      identifiers:
        - type: doi
-         value: 10.5281/zenodo.XXXXXXX
-         description: "Version 1.0.4"
+         value: 10.5281/zenodo.23069546
+         description: "Zenodo DOI for release 1.0.4; also the concept DOI, as this is the first deposit."
      ```
-   - `NOTICE` — replace the `<DOI>` placeholder in the suggested attribution string.
-   - `README.md` — replace the `<DOI>` placeholder in the BibTeX block.
-5. Commit, and mint a new patch release (e.g. `v1.0.4a`) if you want the corrected metadata
-   reflected in the archived record. The version DOI for the original deposit stays valid and
-   immutable, which is exactly what a citation needs.
+     Cite it as a bare string (`10.5281/…`), never as a resolver URL.
+3. Rebuild: `./reproduce.sh --clean --strict` — it must still report `PASS` with **zero** placeholder
+   warnings — then `make release`.
+4. Commit and push, then create the tag and the GitHub release described in §3.
+5. On Zenodo, complete the metadata (resource type *Software*, creators with ORCID, licence, version
+   `1.0.4`), upload the two archives plus `dist/SHA256SUMS`, and **Publish**. The DOI now resolves.
+6. Once the paper has a DOI of its own, return to the Zenodo record and add it as a related identifier
+   `is supplement to`. Never reuse the article's DOI for this deposit — they identify different things.
+
+For later versions, repeat 1–5 with the *new* version DOI, and note that the concept DOI from the
+first deposit stays the same — that is the one to keep in `README.md`.
 
 ## 5. What the paper's availability statement should claim
 
@@ -219,7 +240,7 @@ Only claim what the artifact actually supports. On the basis of the checks in `r
 the defensible wording is:
 
 > The testbed, its rule set and all reported results are available at
-> `https://doi.org/<concept-DOI>`. The artifact contains a one-click reproduction script
+> `https://doi.org/10.5281/zenodo.23069546`. The artifact contains a one-click reproduction script
 > (`./reproduce.sh`) that rebuilds every reported number and figure from scratch and asserts
 > them against the values quoted in the accompanying results document (~180 automated checks).
 > It also regenerates the supplementary tables it ships — the stress-contrast counts and
@@ -228,6 +249,11 @@ the defensible wording is:
 > deterministic; the release was verified end-to-end from a clean checkout. No third-party
 > dependencies are required beyond the standard library, and matplotlib for figure rendering
 > only.
+
+Because v1.0.4 is the first deposit, its version DOI and the concept DOI are the same number, so
+this one link is both "the exact record" and "always the latest". If a later version is deposited
+they diverge: keep the concept DOI if the statement should track the newest release, and the version
+DOI (`…/zenodo.23069546`) if it must pin the release the paper actually used.
 
 Do **not** claim real-world validation, certification against the cited standards, or
 operational deployment. The scenario data are synthetic and the flood-event stress parameters
